@@ -1,13 +1,11 @@
 import express from "express";
+import { middleware } from "@/middlewares/middlewares.js";
 
 const app = express();
 const port = "3000";
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-  console.log("Response sent");
-});
+app.get("/", middleware);
 
 app.listen(port, () => {
-  console.log(`Examp le app listening on port ${port}`);
+  console.log(`Example app listening on port ${port}`);
 });
